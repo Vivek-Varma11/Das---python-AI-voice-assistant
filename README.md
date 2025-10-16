@@ -1,64 +1,73 @@
-# Das AI 🤖
+# Das AI: Desktop Voice Assistant 🤖
 
-Your friendly desktop AI sidekick, built with Python and powered by Google Gemini.
+Das is a voice-activated desktop assistant designed for Windows, bringing the power of Google's Gemini model to your local machine. It listens for a wake word and processes natural language commands to perform tasks, answer questions, and interact with your desktop environment.
 
-Das is a voice-activated assistant that listens for its name, understands natural language, and can interact with your computer. Ask it to take a screenshot, see what's on your webcam, or just have a chat. It's designed to be a simple, fun, and helpful companion for your desktop.
+This application provides a seamless, hands-free way to get information, capture your screen, and access your webcam through a conversational interface.
 
-## Features
+### Platform Compatibility
 
-*   **Voice Activated:** Listens for the wake word "Das" to start a conversation.
-*   **Sees Your Screen:** Can take a screenshot when you ask things like, "What am I looking at?"
-*   **Uses Your Webcam:** Accesses your camera to take a photo if you say, "Can you see me?"
-*   **Clipboard Access:** Can read the text you've copied to your clipboard.
-*   **Natural Conversation:** Powered by Google's Gemini-1.5-Flash for fluid, human-like responses.
-*   **Text-to-Speech:** Responds out loud with a clear voice.
+*   **OS:** This application is developed and tested primarily for **Windows 10 and 11**.
+*   While the core Python logic is cross-platform, tool-specific functions like screen and clipboard capture are optimized for the Windows environment.
 
-## How's the Vibe?
+## Key Features
 
-The whole idea is to make interaction feel natural.
+*   **Voice-Activated Control:** Uses the wake word "Das" to begin listening for commands, ensuring it only activates when you need it.
+*   **Screen Analysis via Screenshot:** Can capture your screen to answer context-aware questions like, "What's on my screen?"
+*   **Webcam Integration:** Accesses your webcam to provide visual feedback for prompts such as, "Can you see me?"
+*   **Conversational AI:** Leverages the Gemini 1.5 Flash model for fluid, intelligent, and context-aware responses.
+*   **Text-to-Speech Output:** Communicates back to you with a clear, audible voice for a true assistant experience.
+*   **Clipboard Access:** Can read and report the current text content from your system clipboard.
 
-1.  **Wake Word:** You say "Das," followed by your question or command.
-2.  **AI Brain:** The audio is sent to Google's Speech-to-Text, then your command is processed by the Gemini model.
-3.  **Tool Use:** Das intelligently decides if it needs to use a tool (like the screenshot or webcam function) based on what you said.
-4.  **Response:** The final answer from Gemini is converted back into speech using gTTS, so Das can talk back to you.
+## How It Works
 
-## Getting Started 🚀
+The assistant operates through a streamlined, multi-step process:
 
-Follow these steps to get Das running on your machine.
+1.  **Wake Word Detection:** The script continuously listens in the background for the wake word "Das."
+2.  **Speech-to-Text Conversion:** Once activated, your spoken command is captured and transcribed into text using the `SpeechRecognition` library.
+3.  **AI Processing with Gemini:** The transcribed text is sent to the Google Gemini API, which interprets your intent.
+4.  **Intelligent Tool Selection:** Based on your command, the AI decides whether to use a local tool (like taking a screenshot or capturing a webcam image) to gather more context.
+5.  **Text-to-Speech Response:** The final, generated response from Gemini is converted back into audio using `gTTS` and played aloud.
+
+## Getting Started
+
+Follow these instructions to set up and run Das on your machine.
 
 ### Prerequisites
 
-You'll need a few things installed first:
-
 *   **Python 3.8+**
-*   **FFmpeg:** This is required for speeding up the audio playback.
-    *   **Windows:** Download from [here](https://ffmpeg.org/download.html) and add it to your system's PATH.
-    *   **macOS:** `brew install ffmpeg`
-    *   **Linux:** `sudo apt update && sudo apt install ffmpeg`
+*   **FFmpeg:** This is required by the `pydub` library for audio processing.
+    *   **Windows:** Download the FFmpeg binaries from the [official site](https://ffmpeg.org/download.html). Unzip the file and add the `bin` folder to your system's PATH environment variable.
 
 ### Installation
 
-1.  **Clone the repository:**
+1.  **Clone the Repository**
     ```sh
     git clone https://github.com/your-username/das-ai-assistant.git
     cd das-ai-assistant
     ```
 
-2.  **Install the required Python packages:**
+2.  **Install Dependencies**
+    Create a virtual environment (recommended) and install the required packages from the `requirements.txt` file.
     ```sh
     pip install -r requirements.txt
     ```
-    *(Note: You might need to install `PyAudio` separately if you run into issues. Check its documentation for your OS.)*
+    *Note: `PyAudio` can sometimes have complex installation steps. If you encounter issues, please consult the official `PyAudio` documentation for platform-specific instructions.*
 
-3.  **Add Your API Key (Important!)**
-    *   Get a free API key from [Google AI Studio](https://aistudio.google.com/app/apikey).
-    *   Open the Python script (`main.py`) and replace the placeholder text with your actual key:
+3.  **Configure API Key**
+    You must add your Google Gemini API key to the script.
+    *   Generate your free key at [Google AI Studio](https://aistudio.google.com/app/apikey).
+    *   Open the `main.py` file and replace the placeholder string with your key:
         ```python
-        # Find this line in the script
+        # Locate this line in the script
         GOOGLE_GEMINI_API_KEY = "YOUR_GOOGLE_GEMINI_API_KEY_HERE"
         ```
 
-### Running the Assistant
+### Running the Application
+
+Execute the main script from your terminal:
+
+```sh
+python main.py
 
 Once everything is set up, just run the script from your terminal:
 
