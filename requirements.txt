@@ -1,0 +1,37 @@
+# requirements.txt
+
+# Google's Generative AI library
+google-generativeai
+
+# OpenCV for image and video processing
+opencv-python
+
+# Library for speech recognition
+SpeechRecognition
+
+# Google Text-to-Speech library
+gTTS
+
+# Multimedia library for playing sounds
+pygame
+
+# Python Imaging Library for image processing
+Pillow
+
+# Audio file handling library
+pydub
+
+# Offline speech recognition engine
+pocketsphinx
+
+#check ffmpeg to increass the speed and changes to audio format.
+    #winget install ffmpeg 
+    #ffmpeg -version
+
+    # Commands to set up virtual environment (these should be run in terminal, not in requirements.txt)
+    #python -m venv venv  
+    #pip install -r requirements.txt     
+    #python.exe -m pip install --upgrade pip
+    
+    #.\venv\Scripts\activate 
+
