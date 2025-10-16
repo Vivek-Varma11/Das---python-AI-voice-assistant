@@ -14,7 +14,7 @@ This application provides a seamless, hands-free way to get information, capture
 *   **Voice-Activated Control:** Uses the wake word "Das" to begin listening for commands, ensuring it only activates when you need it.
 *   **Screen Analysis via Screenshot:** Can capture your screen to answer context-aware questions like, "What's on my screen?"
 *   **Webcam Integration:** Accesses your webcam to provide visual feedback for prompts such as, "Can you see me?"
-*   **Conversational AI:** Leverages the Gemini 1.5 Flash model for fluid, intelligent, and context-aware responses.
+*   **Conversational AI:** Leverages the Gemini 2.5 Flash model for fluid, intelligent, and context-aware responses.
 *   **Text-to-Speech Output:** Communicates back to you with a clear, audible voice for a true assistant experience.
 *   **Clipboard Access:** Can read and report the current text content from your system clipboard.
 
@@ -42,7 +42,7 @@ Follow these instructions to set up and run Das on your machine.
 
 1.  **Clone the Repository**
     ```sh
-    git clone [https://github.com/your-username/das-ai-assistant.git](https://github.com/Vivek-Varma11/Das-python-AI-voice-assistant.git)
+    git clone https://github.com/Vivek-Varma11/Das-python-AI-voice-assistant.git
     cd das-ai-assistant
     # Commands to set up virtual environment (these should be run in terminal, not in requirements.txt)
     python -m venv venv  
