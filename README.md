@@ -42,8 +42,14 @@ Follow these instructions to set up and run Das on your machine.
 
 1.  **Clone the Repository**
     ```sh
-    git clone https://github.com/your-username/das-ai-assistant.git
+    git clone [https://github.com/your-username/das-ai-assistant.git](https://github.com/Vivek-Varma11/Das-python-AI-voice-assistant.git)
     cd das-ai-assistant
+    # Commands to set up virtual environment (these should be run in terminal, not in requirements.txt)
+    python -m venv venv  
+    pip install -r requirements.txt     
+    python.exe -m pip install --upgrade pip
+
+   .\venv\Scripts\activate 
     ```
 
 2.  **Install Dependencies**
